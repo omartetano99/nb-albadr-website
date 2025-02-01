@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1738336006072,
@@ -16,6 +16,10 @@
                 {
                     "date": 1738440456110,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   \"version\": \"0.1.0\",\n   \"private\": true,\n   \"scripts\": {\n     \"dev\": \"next dev --turbo\",\n-    \"build\": \"next build && next export\",\n+    \"build\": \"next build\",\n     \"start\": \"next start\",\n     \"lint\": \"next lint\"\n   },\n   \"dependencies\": {\n"
+                },
+                {
+                    "date": 1738440879288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,14 @@\n     \"@types/node\": \"^20\",\n     \"@types/react\": \"^18\",\n     \"@types/react-dom\": \"^18\",\n     \"autoprefixer\": \"^10.4.20\",\n+    \"css-loader\": \"^6.10.0\",\n+    \"style-loader\": \"^3.3.4\",\n     \"eslint\": \"^8\",\n     \"eslint-config-next\": \"14.1.0\",\n     \"postcss\": \"^8\",\n+    \"postcss-loader\": \"^8.1.0\",\n     \"tailwindcss\": \"^3.3.0\",\n     \"typescript\": \"^5\"\n   }\n }\n"
                 }
             ],
             "date": 1738336006072,
