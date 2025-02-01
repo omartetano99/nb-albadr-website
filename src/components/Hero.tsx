@@ -28,7 +28,7 @@ const content = {
 }
 
 export function Hero() {
-  const { theme } = useTheme()
+  const { theme, resolvedTheme } = useTheme()
   const { language } = useLanguage()
   const [mounted, setMounted] = useState(false)
 
@@ -37,6 +37,9 @@ export function Hero() {
   }, [])
 
   const t = content[language]
+
+  // Determine which logo to show
+  const logoSrc = mounted && (resolvedTheme || theme) === 'dark' ? "/logo-nb.svg" : "/logo-nb-light.svg"
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -59,16 +62,14 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="flex justify-center mb-8"
           >
-            {mounted && (
-              <Image
-                src={theme === 'dark' ? "/logo-nb.svg" : "/logo-nb-light.svg"}
-                alt="NB Albadar Logo"
-                width={80}
-                height={80}
-                className="h-20 w-auto"
-                priority
-              />
-            )}
+            <Image
+              src={logoSrc}
+              alt="NB Albadar Logo"
+              width={80}
+              height={80}
+              className="h-20 w-auto"
+              priority
+            />
           </motion.div>
 
           <motion.h1

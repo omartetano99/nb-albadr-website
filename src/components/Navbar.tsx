@@ -23,7 +23,7 @@ const navLinks = {
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const { theme } = useTheme()
+  const { theme, resolvedTheme } = useTheme()
   const { language } = useLanguage()
   const [mounted, setMounted] = useState(false)
 
@@ -32,22 +32,23 @@ export function Navbar() {
   }, [])
 
   const currentNavLinks = navLinks[language]
+  
+  // Determine which logo to show
+  const logoSrc = mounted && (resolvedTheme || theme) === 'dark' ? "/logo-nb.svg" : "/logo-nb-light.svg"
 
   return (
     <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center">
-            {mounted && (
-              <Image
-                src={theme === 'dark' ? "/logo-nb.svg" : "/logo-nb-light.svg"}
-                alt="NB Albadar Logo"
-                width={40}
-                height={40}
-                className="h-10 w-auto"
-                priority
-              />
-            )}
+            <Image
+              src={logoSrc}
+              alt="NB Albadar Logo"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
             <span className={`ml-2 text-xl font-bold text-gray-900 dark:text-white`}>
               NB Albadr
               <span className="text-xs ml-1 text-gray-600 dark:text-gray-400">Limited</span>

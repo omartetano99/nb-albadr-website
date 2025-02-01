@@ -74,13 +74,16 @@ const navigation = {
 }
 
 export function Footer() {
-  const { theme } = useTheme()
+  const { theme, resolvedTheme } = useTheme()
   const { language } = useLanguage()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  // Determine which logo to show
+  const logoSrc = mounted && (resolvedTheme || theme) === 'dark' ? "/logo-nb.svg" : "/logo-nb-light.svg"
 
   return (
     <footer className="bg-white dark:bg-gray-900">
@@ -92,16 +95,14 @@ export function Footer() {
           transition={{ duration: 0.5 }}
         >
           <div className="flex justify-center">
-            {mounted && (
-              <Image
-                src={theme === 'dark' ? "/logo-nb.svg" : "/logo-nb-light.svg"}
-                alt="NB Albadar Logo"
-                width={40}
-                height={40}
-                className="h-10 w-auto"
-                priority
-              />
-            )}
+            <Image
+              src={logoSrc}
+              alt="NB Albadar Logo"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
           </div>
           <nav
             className="-mx-5 -my-2 flex flex-wrap justify-center mt-6"
