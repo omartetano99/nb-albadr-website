@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 14,
             "patches": [
                 {
                     "date": 1738330497690,
@@ -60,6 +60,10 @@
                 {
                     "date": 1738441297841,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,33 +22,34 @@\n }\n \n export function Navbar() {\n   const [isOpen, setIsOpen] = useState(false)\n-  const { theme } = useTheme()\n+  const { theme, resolvedTheme } = useTheme()\n   const { language } = useLanguage()\n   const [mounted, setMounted] = useState(false)\n \n   useEffect(() => {\n     setMounted(true)\n   }, [])\n \n   const currentNavLinks = navLinks[language]\n+  \n+  // Determine which logo to show\n+  const logoSrc = mounted && (resolvedTheme || theme) === 'dark' ? \"/logo-nb.svg\" : \"/logo-nb-light.svg\"\n \n   return (\n     <nav className=\"fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800\">\n       <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n         <div className=\"flex items-center justify-between h-16\">\n           <Link href=\"/\" className=\"flex items-center\">\n-            {mounted && (\n-              <Image\n-                src={theme === 'dark' ? \"/logo-nb.svg\" : \"/logo-nb-light.svg\"}\n-                alt=\"NB Albadar Logo\"\n-                width={40}\n-                height={40}\n-                className=\"h-10 w-auto\"\n-                priority\n-              />\n-            )}\n+            <Image\n+              src={logoSrc}\n+              alt=\"NB Albadar Logo\"\n+              width={40}\n+              height={40}\n+              className=\"h-10 w-auto\"\n+              priority\n+            />\n             <span className={`ml-2 text-xl font-bold text-gray-900 dark:text-white`}>\n               NB Albadr\n               <span className=\"text-xs ml-1 text-gray-600 dark:text-gray-400\">Limited</span>\n             </span>\n"
+                },
+                {
+                    "date": 1738441481076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n }\n \n export function Navbar() {\n   const [isOpen, setIsOpen] = useState(false)\n-  const { theme, resolvedTheme } = useTheme()\n+  const { resolvedTheme } = useTheme()\n   const { language } = useLanguage()\n   const [mounted, setMounted] = useState(false)\n \n   useEffect(() => {\n@@ -33,9 +33,9 @@\n \n   const currentNavLinks = navLinks[language]\n   \n   // Determine which logo to show\n-  const logoSrc = mounted && (resolvedTheme || theme) === 'dark' ? \"/logo-nb.svg\" : \"/logo-nb-light.svg\"\n+  const logoSrc = mounted ? (resolvedTheme === 'dark' ? \"/logo-nb.svg\" : \"/logo-nb-light.svg\") : \"/logo-nb-light.svg\"\n \n   return (\n     <nav className=\"fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800\">\n       <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n"
                 }
             ],
             "date": 1738330497690,

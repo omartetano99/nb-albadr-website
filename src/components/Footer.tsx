@@ -74,7 +74,7 @@ const navigation = {
 }
 
 export function Footer() {
-  const { theme, resolvedTheme } = useTheme()
+  const { resolvedTheme } = useTheme()
   const { language } = useLanguage()
   const [mounted, setMounted] = useState(false)
 
@@ -83,7 +83,7 @@ export function Footer() {
   }, [])
 
   // Determine which logo to show
-  const logoSrc = mounted && (resolvedTheme || theme) === 'dark' ? "/logo-nb.svg" : "/logo-nb-light.svg"
+  const logoSrc = mounted ? (resolvedTheme === 'dark' ? "/logo-nb.svg" : "/logo-nb-light.svg") : "/logo-nb-light.svg"
 
   return (
     <footer className="bg-white dark:bg-gray-900">

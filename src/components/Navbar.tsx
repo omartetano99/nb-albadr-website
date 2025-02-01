@@ -23,7 +23,7 @@ const navLinks = {
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const { theme, resolvedTheme } = useTheme()
+  const { resolvedTheme } = useTheme()
   const { language } = useLanguage()
   const [mounted, setMounted] = useState(false)
 
@@ -34,7 +34,7 @@ export function Navbar() {
   const currentNavLinks = navLinks[language]
   
   // Determine which logo to show
-  const logoSrc = mounted && (resolvedTheme || theme) === 'dark' ? "/logo-nb.svg" : "/logo-nb-light.svg"
+  const logoSrc = mounted ? (resolvedTheme === 'dark' ? "/logo-nb.svg" : "/logo-nb-light.svg") : "/logo-nb-light.svg"
 
   return (
     <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
