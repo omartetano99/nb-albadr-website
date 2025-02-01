@@ -1,0 +1,18 @@
+{
+    "sourceFile": "postcss.config.mjs",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1738440332979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1738440332979,
+            "name": "Commit-0",
+            "content": "/** @type {import('postcss-load-config').Config} */\nconst config = {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n};\n\nexport default config;\n"
+        }
+    ]
+}

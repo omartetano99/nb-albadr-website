@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1738335993853,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738440219298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,5 @@\n   command = \"npm run build\"\r\n   publish = \".next\"\r\n \r\n [[plugins]]\r\n-  package = \"@netlify/plugin-nextjs\"\r\n-\r\n-[[redirects]]\r\n-  from = \"/*\"\r\n-  to = \"/index.html\"\r\n-  status = 200 \n\\ No newline at end of file\n+  package = \"@netlify/plugin-nextjs\" \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738440496726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n [build]\r\n   command = \"npm run build\"\r\n-  publish = \".next\"\r\n+  publish = \"out\"\r\n \r\n [[plugins]]\r\n   package = \"@netlify/plugin-nextjs\" \n\\ No newline at end of file\n"
                 }
             ],
             "date": 1738335993853,

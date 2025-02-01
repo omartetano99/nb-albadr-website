@@ -6,8 +6,7 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "build-css": "tailwindcss -i ./src/app/globals.css -o ./.next/static/css/globals.css --minify"
+    "lint": "next lint"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
