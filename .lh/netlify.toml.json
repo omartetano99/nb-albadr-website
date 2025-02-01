@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1738335993853,
@@ -20,6 +20,10 @@
                 {
                     "date": 1738440887005,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,10 @@\n [build]\r\n-  command = \"npm run build\"\r\n+  command = \"npm install && npm run build\"\r\n   publish = \"out\"\r\n \r\n [[plugins]]\r\n\\ No newline at end of file\n-  package = \"@netlify/plugin-nextjs\" \n+  package = \"@netlify/plugin-nextjs\"\r\n+\r\n+[build.environment]\r\n+  NEXT_USE_NETLIFY_EDGE = \"true\"\r\n+  NODE_VERSION = \"18\" \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1738441039867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n [build]\r\n-  command = \"npm install && npm run build\"\r\n+  command = \"npm ci && npm run build\"\r\n   publish = \"out\"\r\n \r\n [[plugins]]\r\n   package = \"@netlify/plugin-nextjs\"\r\n \r\n [build.environment]\r\n   NEXT_USE_NETLIFY_EDGE = \"true\"\r\n\\ No newline at end of file\n-  NODE_VERSION = \"18\" \n+  NODE_VERSION = \"18\"\r\n+  NPM_FLAGS = \"--legacy-peer-deps\" \n\\ No newline at end of file\n"
                 }
             ],
             "date": 1738335993853,
