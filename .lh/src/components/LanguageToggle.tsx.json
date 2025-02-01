@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/LanguageToggle.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1738331604436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1738331604436,
+            "name": "Commit-0",
+            "content": "'use client'\r\n\r\nimport { motion } from 'framer-motion'\r\nimport { useLanguage } from '@/context/LanguageContext'\r\n\r\nexport function LanguageToggle() {\r\n  const { language, setLanguage } = useLanguage()\r\n\r\n  return (\r\n    <motion.button\r\n      whileHover={{ scale: 1.05 }}\r\n      whileTap={{ scale: 0.95 }}\r\n      onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}\r\n      className=\"px-3 py-1 rounded-md bg-primary/10 hover:bg-primary/20 transition-colors text-primary font-medium\"\r\n      aria-label=\"Toggle language\"\r\n    >\r\n      {language === 'en' ? 'العربية' : 'English'}\r\n    </motion.button>\r\n  )\r\n} "
+        }
+    ]
+}

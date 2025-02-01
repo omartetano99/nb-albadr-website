@@ -1,0 +1,18 @@
+{
+    "sourceFile": "netlify.toml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1738335993853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1738335993853,
+            "name": "Commit-0",
+            "content": "[build]\r\n  command = \"npm run build\"\r\n  publish = \".next\"\r\n\r\n[[plugins]]\r\n  package = \"@netlify/plugin-nextjs\"\r\n\r\n[[redirects]]\r\n  from = \"/*\"\r\n  to = \"/index.html\"\r\n  status = 200 "
+        }
+    ]
+}

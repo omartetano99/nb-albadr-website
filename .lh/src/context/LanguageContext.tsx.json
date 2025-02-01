@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/context/LanguageContext.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1738331594125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1738331594125,
+            "name": "Commit-0",
+            "content": "'use client'\r\n\r\nimport { createContext, useContext, useState, useEffect } from 'react'\r\n\r\ntype LanguageContextType = {\r\n  language: 'en' | 'ar'\r\n  setLanguage: (lang: 'en' | 'ar') => void\r\n}\r\n\r\nconst LanguageContext = createContext<LanguageContextType | undefined>(undefined)\r\n\r\nexport function LanguageProvider({ children }: { children: React.ReactNode }) {\r\n  const [language, setLanguage] = useState<'en' | 'ar'>('en')\r\n\r\n  useEffect(() => {\r\n    const savedLanguage = localStorage.getItem('language') as 'en' | 'ar'\r\n    if (savedLanguage) {\r\n      setLanguage(savedLanguage)\r\n      document.documentElement.dir = savedLanguage === 'ar' ? 'rtl' : 'ltr'\r\n      document.documentElement.lang = savedLanguage\r\n    }\r\n  }, [])\r\n\r\n  const handleLanguageChange = (newLanguage: 'en' | 'ar') => {\r\n    setLanguage(newLanguage)\r\n    localStorage.setItem('language', newLanguage)\r\n    document.documentElement.dir = newLanguage === 'ar' ? 'rtl' : 'ltr'\r\n    document.documentElement.lang = newLanguage\r\n  }\r\n\r\n  return (\r\n    <LanguageContext.Provider value={{ language, setLanguage: handleLanguageChange }}>\r\n      {children}\r\n    </LanguageContext.Provider>\r\n  )\r\n}\r\n\r\nexport function useLanguage() {\r\n  const context = useContext(LanguageContext)\r\n  if (context === undefined) {\r\n    throw new Error('useLanguage must be used within a LanguageProvider')\r\n  }\r\n  return context\r\n} "
+        }
+    ]
+}

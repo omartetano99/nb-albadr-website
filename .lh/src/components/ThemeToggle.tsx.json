@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/ThemeToggle.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1738330469157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738330469191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,33 @@\n+'use client'\r\n+\r\n+import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'\r\n+import { useTheme } from 'next-themes'\r\n+import { useEffect, useState } from 'react'\r\n+import { motion } from 'framer-motion'\r\n+\r\n+export function ThemeToggle() {\r\n+  const [mounted, setMounted] = useState(false)\r\n+  const { theme, setTheme } = useTheme()\r\n+\r\n+  useEffect(() => {\r\n+    setMounted(true)\r\n+  }, [])\r\n+\r\n+  if (!mounted) return null\r\n+\r\n+  return (\r\n+    <motion.button\r\n+      whileHover={{ scale: 1.05 }}\r\n+      whileTap={{ scale: 0.95 }}\r\n+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}\r\n+      className=\"p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors\"\r\n+      aria-label=\"Toggle theme\"\r\n+    >\r\n+      {theme === 'dark' ? (\r\n+        <SunIcon className=\"w-5 h-5 text-primary\" />\r\n+      ) : (\r\n+        <MoonIcon className=\"w-5 h-5 text-primary\" />\r\n+      )}\r\n+    </motion.button>\r\n+  )\r\n+} \n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1738330469157,
+            "name": "Commit-0",
+            "content": "'use client'\r\n\r\nimport { SunIcon, MoonIcon } from '@heroicons/react/24/outline'\r\nimport { useTheme } from 'next-themes'\r\nimport { useEffect, useState } from 'react'\r\nimport { motion } from 'framer-motion'\r\n\r\nexport function ThemeToggle() {\r\n  const [mounted, setMounted] = useState(false)\r\n  const { theme, setTheme } = useTheme()\r\n\r\n  useEffect(() => {\r\n    setMounted(true)\r\n  }, [])\r\n\r\n  if (!mounted) return null\r\n\r\n  return (\r\n    <motion.button\r\n      whileHover={{ scale: 1.05 }}\r\n      whileTap={{ scale: 0.95 }}\r\n      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}\r\n      className=\"p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors\"\r\n      aria-label=\"Toggle theme\"\r\n    >\r\n      {theme === 'dark' ? (\r\n        <SunIcon className=\"w-5 h-5 text-primary\" />\r\n      ) : (\r\n        <MoonIcon className=\"w-5 h-5 text-primary\" />\r\n      )}\r\n    </motion.button>\r\n  )\r\n} "
+        }
+    ]
+}
