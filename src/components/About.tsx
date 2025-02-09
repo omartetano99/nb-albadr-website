@@ -6,9 +6,9 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const content = {
   en: {
-    title: 'About NB Albadar',
-    description1: 'We are a leading media and event management company dedicated to creating extraordinary experiences. With years of expertise in the industry, we transform ideas into reality through innovative solutions and meticulous attention to detail.',
-    description2: 'Our team of creative professionals works tirelessly to ensure every project exceeds expectations, whether it\'s a corporate event, media campaign, or creative production.',
+    title: 'About Noor Al-Badr',
+    description1: 'At Noor Al-Badr, we believe that true success lies in the ability to adapt to change and stay ahead in the fast-paced world of media and event management. We are committed to expanding our services across all media, marketing, and creative fields, from producing outstanding content to organizing unforgettable events that leave a lasting impact ,With our innovative strategies and a highly skilled team, we continue to develop our brand identity to become a leader in both local and global markets. By embracing the latest technologies and best practices, we ensure the delivery of comprehensive solutions that meet our clients’ needs with the highest standards of quality and excellence, .',
+    description2: 'Noor Al-Badr – Crafting Success Stories, Creating Unforgettable Experiences.',
     stats: [
       {
         label: 'Events Managed',
@@ -29,8 +29,8 @@ const content = {
   },
   ar: {
     title: 'من نحن',
-    description1: 'نقدم خدمات إعلامية متكاملة وننظم فعاليات مميزة تترك أثراً لا يُنسى. خبرتنا الطويلة في المجال تمكننا من تحويل أفكاركم إلى واقع ملموس بأسلوب مبتكر ومتقن.',
-    description2: 'فريقنا المحترف يسعى دائماً لتقديم الأفضل في كل مشاريعنا، سواء كانت فعاليات أو حملات إعلامية أو إنتاج إبداعي.',
+    description1: 'في نور البدر، نؤمن بأن النجاح الحقيقي يكمن في القدرة على مواكبة التغيرات والتكيف مع التطورات السريعة في عالم الإعلام وتنظيم الفعاليات. نحن ملتزمون بتوسيع نطاق خدماتنا عبر كافة المجالات الإعلامية والتسويقية والإبداعية، بدءًا من إنتاج المحتوى المتميز إلى تنظيم الفعاليات التي تترك أثرًا لا يُنسى ,بفضل استراتيجياتنا المبتكرة وفريقنا المحترف، نواصل تطوير هويتنا التجارية لنكون روادًا في الأسواق المحلية والعالمية. ومن خلال تبني أحدث التقنيات وأفضل الممارسات، نضمن تقديم حلول متكاملة تلبي احتياجات عملائنا بأعلى معايير الجودة والتميز.',
+    description2: 'نور البدر – نصنع قصص النجاح، ونخلق تجارب لا تُنسى',
     stats: [
       {
         label: 'فعالية ناجحة',

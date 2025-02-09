@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 8,
+            "activePatchIndex": 9,
             "patches": [
                 {
                     "date": 1738330526057,
@@ -40,6 +40,10 @@
                 {
                     "date": 1738333973429,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,25 +31,4 @@\n       <Footer />\n     </main>\n   )\n }\n-import { Navbar } from '@/components/Navbar'\n-import { Hero } from '@/components/Hero'\n-import { About } from '@/components/About'\n-import { Services } from '@/components/Services'\n-import { Testimonials } from '@/components/Testimonials'\n-import { Contact } from '@/components/Contact'\n-import { Footer } from '@/components/Footer'\n-\n-export default function Home() {\n-  return (\n-    <main>\n-      <Navbar />\n-      <Hero />\n-      <About />\n-      <Services />\n-      <Testimonials />\n-      <Contact />\n-      <Footer />\n-    </main>\n-  )\n-}\n"
+                },
+                {
+                    "date": 1738605585655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,11 @@\n 'use client'\n \n-import { Navbar } from '@/components/Navbar'\n import { Hero } from '@/components/Hero'\n import { About } from '@/components/About'\n import { Services } from '@/components/Services'\n import { Testimonials } from '@/components/Testimonials'\n import { Contact } from '@/components/Contact'\n-import { Footer } from '@/components/Footer'\n import { useEffect, useState } from 'react'\n \n export default function Home() {\n   const [mounted, setMounted] = useState(false)\n@@ -21,14 +19,12 @@\n   }\n \n   return (\n     <main>\n-      <Navbar />\n       <Hero />\n       <About />\n       <Services />\n       <Testimonials />\n       <Contact />\n-      <Footer />\n     </main>\n   )\n }\n"
                 }
             ],
             "date": 1738330526057,

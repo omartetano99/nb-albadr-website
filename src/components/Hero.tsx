@@ -13,7 +13,7 @@ const content = {
       middle: 'Ideas into',
       end: 'Experiences'
     },
-    description: 'NB Albadr specializes in creating unforgettable media experiences and events that leave lasting impressions. From concept to execution, we bring your vision to life.',
+    description: 'Noor Al-Badr for Media & Events – Where Creativity Meets Continuous Evolution.',
     cta: 'Start the Magic & Call Us'
   },
   ar: {

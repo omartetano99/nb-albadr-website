@@ -49,31 +49,37 @@ export function Navbar() {
               className="h-10 w-auto"
               priority
             />
-            <span className={`ml-2 text-xl font-bold text-gray-900 dark:text-white`}>
-              NB Albadr
-              <span className="text-xs ml-1 text-gray-600 dark:text-gray-400">Limited</span>
-            </span>
+            <div className={`ms-2 flex flex-col ${language === 'ar' ? 'items-end' : 'items-start'}`}>
+              <span className={`text-xl font-bold text-gray-900 dark:text-white ${language === 'ar' ? 'font-arabic text-lg' : ''}`}>
+                NB Albadr
+              </span>
+              <span className="text-[10px] text-gray-600 dark:text-gray-400 -mt-1">Limited</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8" dir={language === 'ar' ? 'rtl' : 'ltr'}>
-            {currentNavLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors ${language === 'ar' ? 'font-arabic' : ''}`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="flex items-center space-x-4">
+          <div className="hidden md:flex items-center" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+            <div className="flex gap-8">
+              {currentNavLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors ${language === 'ar' ? 'font-arabic' : ''}`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div className="flex items-center ms-8">
               <ThemeToggle />
-              <LanguageToggle />
+              <div className="ms-4">
+                <LanguageToggle />
+              </div>
             </div>
           </div>
 
           {/* Mobile Navigation Button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
             <LanguageToggle />
             <button

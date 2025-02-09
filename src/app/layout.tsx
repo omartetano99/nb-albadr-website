@@ -4,6 +4,8 @@ import { Noto_Kufi_Arabic } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const notoKufiArabic = Noto_Kufi_Arabic({ 
@@ -33,7 +35,9 @@ export default function RootLayout({
         >
           <LanguageProvider>
             <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+              <Navbar />
               {children}
+              <Footer />
             </div>
           </LanguageProvider>
         </ThemeProvider>
